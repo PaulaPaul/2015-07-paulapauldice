@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dice JavaScript!</title>
+	<script type="text/javascript">
+    function randomFromTo(from, to){
+      return Math.floor(Math.random() * (to - from + 1) + from);
+    }
+    function hideall() {
+      var elements = document.getElementsByClassName('die')
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = 'hidden';
+      }
+    }
+    function showdie(num) {
+      var dieId = 'die' + num.toString(); 
+      var die = document.getElementById(dieId);
+      die.style.visibility = 'visible';
+    }
+    function rollem() {
+	    var roll = randomFromTo(1,6);
+		  hideall();
+		  showdie(roll);
+	  }
+  </script>
+</head>
+<body>
+	<h1>Rollem!</h1>
+	<p>Welcome to my JavaScript Dice Game!</p>
+	
+	<table>
+	  <tr>
+	    <td><img id="die1" class="die" src="/images/red-die-1.png" height="80" width="80"/></td>
+	    <td><img id="die2" class="die" src="/images/red-die-2.png" height="80" width="80"/></td>
+	    <td><img id="die3" class="die" src="/images/red-die-3.png" height="80" width="80"/></td>
+	    <td><img id="die4" class="die" src="/images/red-die-4.png" height="80" width="80"/></td>
+	    <td><img id="die5" class="die" src="/images/red-die-5.png" height="80" width="80"/></td>
+	    <td><img id="die6" class="die" src="/images/red-die-6.png" height="80" width="80"/></td>
+	  </tr>
+	</table>
+  <button id="roll" type="button" onClick="rollem()">Rollem!</button><br>
+</body>
+</html>
